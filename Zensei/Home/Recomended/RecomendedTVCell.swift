@@ -38,8 +38,6 @@ class RecomendedTVCell: UITableViewCell,UICollectionViewDelegateFlowLayout, UICo
                 UIImage(systemName: "music.note")
             }
         }
-        
-        cell.backgroundColor = UIColor.gray
         return cell
     }
     

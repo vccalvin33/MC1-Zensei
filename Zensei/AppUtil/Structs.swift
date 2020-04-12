@@ -14,3 +14,4 @@ struct Meditation {
     var description: String!
     var type: Int!
 }
+

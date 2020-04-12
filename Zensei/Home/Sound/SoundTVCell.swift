@@ -33,8 +33,6 @@ class SoundTVCell: UITableViewCell,UICollectionViewDelegateFlowLayout, UICollect
             cell.imgType.image = UIImage(systemName: "music.note")
           
         }
-        
-        cell.backgroundColor = UIColor.gray
         return cell
     }
     

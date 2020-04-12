@@ -11,22 +11,34 @@ import UIKit
 class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
-    
+    //dcdfd3
+    //345d4e
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isTranslucent = false
-     
+        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.hideBottomHairline()
         super.viewWillAppear(true)
+        self.navigationController?.navigationBar.hideBottomHairline()
+        if #available(iOS 13, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = #colorLiteral(red: 0.8891196251, green: 0.8976630569, blue: 0.8601869941, alpha: 1)
+            appearance.titleTextAttributes =  [.foregroundColor: UIColor.white]
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.compactAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        } else {
+            navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.8891196251, green: 0.8976630569, blue: 0.8601869941, alpha: 1)
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        }
     }
     
-  
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -70,7 +82,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 220
+        return 250
     }
     
     //Ke Menu Profile

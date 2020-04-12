@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		761BA8DF24435558001A58A5 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BA8DA24435557001A58A5 /* DetailCell.swift */; };
+		761BA8E024435558001A58A5 /* DetailNumberedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BA8DB24435557001A58A5 /* DetailNumberedCell.swift */; };
+		761BA8E124435558001A58A5 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BA8DC24435558001A58A5 /* DetailVC.swift */; };
+		761BA8E224435558001A58A5 /* DetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BA8DD24435558001A58A5 /* DetailHeaderCell.swift */; };
+		761BA8E324435558001A58A5 /* DetailContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BA8DE24435558001A58A5 /* DetailContent.swift */; };
+		761BA8E724435C0C001A58A5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BA8E624435C0C001A58A5 /* ProfileViewController.swift */; };
+		761BA8EA24435C40001A58A5 /* DuringMeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BA8E924435C40001A58A5 /* DuringMeditationViewController.swift */; };
+		761BA8EC24435C4E001A58A5 /* StoppedMeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BA8EB24435C4E001A58A5 /* StoppedMeditationViewController.swift */; };
+		761BA8EF24435C83001A58A5 /* WeeklyProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BA8ED24435C83001A58A5 /* WeeklyProgress.swift */; };
+		761BA8F024435C83001A58A5 /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BA8EE24435C83001A58A5 /* ProgressCell.swift */; };
+		761BA8F324435E31001A58A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BA8F224435E31001A58A5 /* ViewController.swift */; };
 		764BE70A243C70F100C76E42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BE709243C70F100C76E42 /* AppDelegate.swift */; };
 		764BE70C243C70F100C76E42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BE70B243C70F100C76E42 /* SceneDelegate.swift */; };
 		764BE70E243C70F100C76E42 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BE70D243C70F100C76E42 /* MainVC.swift */; };
@@ -27,6 +38,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		761BA8DA24435557001A58A5 /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		761BA8DB24435557001A58A5 /* DetailNumberedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNumberedCell.swift; sourceTree = "<group>"; };
+		761BA8DC24435558001A58A5 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		761BA8DD24435558001A58A5 /* DetailHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailHeaderCell.swift; sourceTree = "<group>"; };
+		761BA8DE24435558001A58A5 /* DetailContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailContent.swift; sourceTree = "<group>"; };
+		761BA8E624435C0C001A58A5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		761BA8E924435C40001A58A5 /* DuringMeditationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuringMeditationViewController.swift; sourceTree = "<group>"; };
+		761BA8EB24435C4E001A58A5 /* StoppedMeditationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoppedMeditationViewController.swift; sourceTree = "<group>"; };
+		761BA8ED24435C83001A58A5 /* WeeklyProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyProgress.swift; sourceTree = "<group>"; };
+		761BA8EE24435C83001A58A5 /* ProgressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
+		761BA8F224435E31001A58A5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		764BE706243C70F100C76E42 /* Zensei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zensei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		764BE709243C70F100C76E42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		764BE70B243C70F100C76E42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +81,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		761BA8D824435533001A58A5 /* AppUtil */ = {
+			isa = PBXGroup;
+			children = (
+				76F23BFB24431C3700196BBE /* Structs.swift */,
+				76F23BFD2443208400196BBE /* Extension.swift */,
+				76F23C0F2443251C00196BBE /* Function.swift */,
+			);
+			path = AppUtil;
+			sourceTree = "<group>";
+		};
+		761BA8D92443554D001A58A5 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				761BA8DA24435557001A58A5 /* DetailCell.swift */,
+				761BA8DE24435558001A58A5 /* DetailContent.swift */,
+				761BA8DD24435558001A58A5 /* DetailHeaderCell.swift */,
+				761BA8DB24435557001A58A5 /* DetailNumberedCell.swift */,
+				761BA8DC24435558001A58A5 /* DetailVC.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		761BA8E424435BE7001A58A5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				761BA8E624435C0C001A58A5 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		761BA8E524435BF3001A58A5 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				761BA8EE24435C83001A58A5 /* ProgressCell.swift */,
+				761BA8ED24435C83001A58A5 /* WeeklyProgress.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		761BA8E824435C20001A58A5 /* MeditationProcess */ = {
+			isa = PBXGroup;
+			children = (
+				761BA8EB24435C4E001A58A5 /* StoppedMeditationViewController.swift */,
+				761BA8E924435C40001A58A5 /* DuringMeditationViewController.swift */,
+			);
+			path = MeditationProcess;
+			sourceTree = "<group>";
+		};
+		761BA8F124435DD1001A58A5 /* Wizard */ = {
+			isa = PBXGroup;
+			children = (
+				761BA8F224435E31001A58A5 /* ViewController.swift */,
+			);
+			path = Wizard;
+			sourceTree = "<group>";
+		};
 		764BE6FD243C70F000C76E42 = {
 			isa = PBXGroup;
 			children = (
@@ -78,17 +156,20 @@
 		764BE708243C70F100C76E42 /* Zensei */ = {
 			isa = PBXGroup;
 			children = (
+				761BA8F124435DD1001A58A5 /* Wizard */,
+				761BA8E824435C20001A58A5 /* MeditationProcess */,
+				761BA8E524435BF3001A58A5 /* Progress */,
+				761BA8E424435BE7001A58A5 /* Profile */,
+				761BA8D92443554D001A58A5 /* Detail */,
+				761BA8D824435533001A58A5 /* AppUtil */,
 				76F23BFF2443211200196BBE /* Home */,
 				764BE709243C70F100C76E42 /* AppDelegate.swift */,
 				764BE70B243C70F100C76E42 /* SceneDelegate.swift */,
 				764BE70F243C70F100C76E42 /* Main.storyboard */,
-				764BE715243C70F200C76E42 /* Assets.xcassets */,
 				764BE717243C70F200C76E42 /* LaunchScreen.storyboard */,
+				764BE715243C70F200C76E42 /* Assets.xcassets */,
 				764BE71A243C70F200C76E42 /* Info.plist */,
 				764BE712243C70F100C76E42 /* Zensei.xcdatamodeld */,
-				76F23BFB24431C3700196BBE /* Structs.swift */,
-				76F23BFD2443208400196BBE /* Extension.swift */,
-				76F23C0F2443251C00196BBE /* Function.swift */,
 			);
 			path = Zensei;
 			sourceTree = "<group>";
@@ -203,20 +284,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				761BA8F324435E31001A58A5 /* ViewController.swift in Sources */,
 				76F23C082443217900196BBE /* RecomendedCVCell.swift in Sources */,
 				76F23C062443216400196BBE /* MeditationCVCell.swift in Sources */,
+				761BA8E724435C0C001A58A5 /* ProfileViewController.swift in Sources */,
+				761BA8E324435558001A58A5 /* DetailContent.swift in Sources */,
 				76F23C102443251C00196BBE /* Function.swift in Sources */,
 				764BE70E243C70F100C76E42 /* MainVC.swift in Sources */,
+				761BA8E124435558001A58A5 /* DetailVC.swift in Sources */,
 				76F23C0C244321A100196BBE /* SoundTVCell.swift in Sources */,
+				761BA8DF24435558001A58A5 /* DetailCell.swift in Sources */,
 				764BE714243C70F100C76E42 /* Zensei.xcdatamodeld in Sources */,
+				761BA8F024435C83001A58A5 /* ProgressCell.swift in Sources */,
 				76F23BFC24431C3700196BBE /* Structs.swift in Sources */,
+				761BA8E024435558001A58A5 /* DetailNumberedCell.swift in Sources */,
 				76F23C12244336B000196BBE /* MenuData.swift in Sources */,
 				76F23C0E244321C700196BBE /* SoundCVCell.swift in Sources */,
 				76F23BFE2443208400196BBE /* Extension.swift in Sources */,
+				761BA8EF24435C83001A58A5 /* WeeklyProgress.swift in Sources */,
 				764BE70A243C70F100C76E42 /* AppDelegate.swift in Sources */,
 				76F23C0A2443219100196BBE /* RecomendedTVCell.swift in Sources */,
 				764BE70C243C70F100C76E42 /* SceneDelegate.swift in Sources */,
 				76F23C042443214800196BBE /* MeditationTVCell.swift in Sources */,
+				761BA8E224435558001A58A5 /* DetailHeaderCell.swift in Sources */,
+				761BA8EC24435C4E001A58A5 /* StoppedMeditationViewController.swift in Sources */,
+				761BA8EA24435C40001A58A5 /* DuringMeditationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

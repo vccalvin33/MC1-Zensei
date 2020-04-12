@@ -32,17 +32,19 @@ class MeditationTVCell: UITableViewCell,UICollectionViewDelegateFlowLayout, UICo
                       cell.imgBG.image = UIImage(named: menu.icon)
                       cell.imgType.image = UIImage(systemName: "moon.zzz")
         }
-          
-        cell.backgroundColor = UIColor.gray
+        
            return cell
        }
        
        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
            collectionView.deselectItem(at: indexPath, animated: false)
         //Ke Detail
-//               let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "storyBoardID") as! NamaController
-//               self.viewController()?.navigationController?.pushViewController(vc, animated: true)
-               
+               let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailVC") as! DetailVC
+               self.viewController()?.navigationController?.pushViewController(vc, animated: true)
+        
+//        let vc = DetailVC()
+//        self.viewController()?.navigationController?.pushViewController(vc, animated: true)
+//
            
        }
        
