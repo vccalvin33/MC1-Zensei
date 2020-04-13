@@ -91,6 +91,5 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
          self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
 }
 

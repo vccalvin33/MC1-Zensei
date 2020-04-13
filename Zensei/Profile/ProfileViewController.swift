@@ -18,8 +18,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     let defaults = UserDefaults.standard
     var minutesSum = 0
-    var sessionsSum = 0
-    var minutes = 0
+    var sessionsSum = sesi
+//    var minutes = min
     
     let weeklyProgress = [
         WeeklyProgress(day: "Monday", time: 0),
@@ -60,14 +60,14 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         return weeklyProgress.count
     }
     
-    func getDate() -> String {
-        let currentDate = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "cccc"
-        let date = dateFormatter.string(from: currentDate)
-        
-        return date
-    }
+//    func getDate() -> String {
+//        let currentDate = Date()
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "cccc"
+//        let date = dateFormatter.string(from: currentDate)
+//
+//        return date
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -76,35 +76,33 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             var progress = weeklyProgress[indexPath.row]
 
         // Configure the cell
-            let day = getDate()
-            //dateChecker
-            switch (day, progress.day) {
-                case ("Monday", "Monday"):
-                    progress.time = minutes
+            switch progress.day {
+                case "Monday":
+                    progress.time += minSum[0]
                     minutesSum += progress.time
                     break
-                case ("Tuesday", "Tuesday"):
-                    progress.time = minutes
+                case "Tuesday":
+                    progress.time += minSum[1]
                     minutesSum += progress.time
                     break
-                case ("Wednesday", "Wednesday"):
-                    progress.time = minutes
+                case "Wednesday":
+                    progress.time += minSum[2]
                     minutesSum += progress.time
                     break
-                case ("Thursday", "Thursday"):
-                    progress.time = minutes
+                case "Thursday":
+                    progress.time += minSum[3]
                     minutesSum += progress.time
                     break
-                case ("Friday", "Friday"):
-                    progress.time = minutes
+                case "Friday":
+                    progress.time += minSum[4]
                     minutesSum += progress.time
                     break
-                case ("Saturday", "Saturday"):
-                    progress.time = minutes
+                case "Saturday":
+                    progress.time += minSum[5]
                     minutesSum += progress.time
                     break
-                case ("Sunday","Sunday"):
-                    progress.time = minutes
+                case "Sunday":
+                    progress.time += minSum[6]
                     minutesSum += progress.time
                     break
                 default:
@@ -117,6 +115,41 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             minutesLabel.text = String(minutesSum)
             sessionsLabel.text = String(sessionsSum)
             cell.backgroundColor = .clear
+            
+//            let day = getDate()
+            //dateChecker
+//            switch (day, progress.day) {
+//                case ("Monday", "Monday"):
+//                    progress.time += minutes
+//                    minutesSum += progress.time
+//                    break
+//                case ("Tuesday", "Tuesday"):
+//                    progress.time += minutes
+//                    minutesSum += progress.time
+//                    break
+//                case ("Wednesday", "Wednesday"):
+//                    progress.time += minutes
+//                    minutesSum += progress.time
+//                    break
+//                case ("Thursday", "Thursday"):
+//                    progress.time += minutes
+//                    minutesSum += progress.time
+//                    break
+//                case ("Friday", "Friday"):
+//                    progress.time += minutes
+//                    minutesSum += progress.time
+//                    break
+//                case ("Saturday", "Saturday"):
+//                    progress.time += minutes
+//                    minutesSum += progress.time
+//                    break
+//                case ("Sunday","Sunday"):
+//                    progress.time += minutes
+//                    minutesSum += progress.time
+//                    break
+//                default:
+//                    break
+//            }
             
             return cell
         }
