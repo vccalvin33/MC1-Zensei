@@ -792,7 +792,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3T-8P-5Hg">
-                                                    <rect key="frame" x="81" y="29" width="28" height="60"/>
+                                                    <rect key="frame" x="18" y="29" width="154" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                     <color key="textColor" red="0.86274509799999999" green="0.87450980389999999" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -806,7 +806,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBN-fp-7NV">
-                                                    <rect key="frame" x="269" y="29" width="28" height="60"/>
+                                                    <rect key="frame" x="210" y="29" width="146" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                     <color key="textColor" red="0.86274509799999999" green="0.87450980389999999" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -905,7 +905,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4c-mF-fmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="857"/>
+            <point key="canvasLocation" x="137.68115942028987" y="856.47321428571422"/>
         </scene>
     </scenes>
     <resources>
