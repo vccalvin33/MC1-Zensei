@@ -7,13 +7,29 @@
 //
 
 import UIKit
+import AVFoundation
 
 class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
+    
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var finishedLabel: UILabel!
     @IBOutlet weak var endSessionButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var iconMusic: UIImageView!
+    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var restartBtn: UIButton!{
+        didSet{
+            restartBtn.isHidden = true
+            restartBtn.layer.cornerRadius = 20
+        }
+    }
+    
+    
+    var audio = AVAudioPlayer()
+    var hasBeenPaused = false
+    let fileAudio = Bundle.main.path(forResource: "meditation-1", ofType: "mp3")!
+    
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         return durationPickerNumbers[component].count
@@ -53,7 +69,7 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
             durationPicker.selectRow(meditationDuration[durations], inComponent: durations, animated: false)
         }
     }
-
+    
     let shapeLayer = CAShapeLayer()
     
     //let timerLabel = UILabel()
@@ -134,12 +150,16 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Prepare Song
+        prepareSongAndSession()
+        
         stopButton.isHidden = true
         endSessionButton.isHidden = true
         finishedLabel.isHidden = true
         endSessionButton.layer.cornerRadius = 20
         startButton.layer.cornerRadius = 20
         stopButton.layer.cornerRadius = 20
+        
         let circularPath = UIBezierPath(arcCenter: .zero, radius: 150, startAngle: 0, endAngle: 2 *
             CGFloat.pi, clockwise: true)
         let firstLayer = CAShapeLayer()
@@ -164,18 +184,27 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
         durationPicker.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         durationPicker.center = centerView.center
         
-    
+        
         // Do any additional setup after loading the view.
     }
     
     //MARK: WHEN BUTTON IS PRESSED
     
     @IBAction func startPressed(_ sender: Any) {
-        startButton.isHidden = true
-        //startButton.isEnabled = false
-        durationPicker.isHidden = true
-        stopButton.isHidden = false
-        timerCompleteSetup()
+        if meditationDuration[0] == 0 && meditationDuration[1] == 0 {
+            alertSetTime()
+        }else{
+            startButton.isHidden = true
+            //startButton.isEnabled = false
+            durationPicker.isHidden = true
+            stopButton.isHidden = false
+            timerLabel.isHidden = false
+            backBtn.isHidden = true
+            timerCompleteSetup()
+            rotateImage()
+            play()
+        }
+        
     }
     
     
@@ -183,7 +212,15 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
         timer.invalidate()
         shapeLayer.removeAllAnimations()
         pulsatingLayer.removeAllAnimations()
+        stopButton.isHidden = true
+        durationPicker.isHidden = false
+        timerLabel.isHidden = true
+         backBtn.isHidden = false
+        restartBtn.isHidden = false
+        viewDidLoad()
+        stopRotate()
         //segue
+        stop()
     }
     
     func getDate() -> String {
@@ -205,29 +242,29 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
         min = meditationDuration[0]
         let day = getDate()
         switch day {
-            case "Monday":
-                minSum[0] += min
-                break
-            case "Tuesday":
-                minSum[1] += min
-                break
-            case "Wednesday":
-                minSum[2] += min
-                break
-            case "Thursday":
-                minSum[3] += min
-                break
-            case "Friday":
-                minSum[4] += min
-                break
-            case "Saturday":
-                minSum[5] += min
-                break
-            case "Sunday":
-                minSum[6] += min
-                break
-            default:
-                break
+        case "Monday":
+            minSum[0] += min
+            break
+        case "Tuesday":
+            minSum[1] += min
+            break
+        case "Wednesday":
+            minSum[2] += min
+            break
+        case "Thursday":
+            minSum[3] += min
+            break
+        case "Friday":
+            minSum[4] += min
+            break
+        case "Saturday":
+            minSum[5] += min
+            break
+        case "Sunday":
+            minSum[6] += min
+            break
+        default:
+            break
         }
         defaults.set(sesi, forKey: "savedSessions")
         defaults.set(minSum, forKey: "savedMinutes")
@@ -261,7 +298,7 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
         
         shapeLayer.add(basicAnimation, forKey: "urSoBasic")
     }
-
+    
     //MARK: TIMER
     func startTimer() {
         counter = Double(meditationDuration[0]*60 + meditationDuration[1])
@@ -273,13 +310,13 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
         counter = counter - 0.1
         // MM:SS
         let flooredCounter = Int(floor(counter))
-
+        
         let minute = (flooredCounter % 3600 ) / 60
         var minuteString = "\(minute)"
         if minute < 10 {
             minuteString = "0\(minute)"
         }
-
+        
         let second = (flooredCounter % 3600) % 60
         var secondString = "\(second)"
         if second < 10 {
@@ -293,9 +330,113 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
             timerLabel.text = "00:00"
             stopButton.isHidden = true
             endSessionButton.isHidden = false
+            backBtn.isHidden = true
             finishedLabel.isHidden = false
-            
+            stopRotate()
+            stop()
         }
+    }
+    
+    @IBAction func didTapRestartBtn(_ sender: Any) {
+        if meditationDuration[0] == 0 && meditationDuration[1] == 0 {
+            alertSetTime()
+        }else{
+            restartBtn.isHidden = true
+            backBtn.isHidden = true
+            durationPicker.isHidden = true
+            stopButton.isHidden = false
+            timerLabel.isHidden = false
+            timerCompleteSetup()
+            rotateImage()
+            play()
+        }
+        
+    }
+    
+    @IBAction func didTapBackBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    //MARK:-------------------- FUNCTION PLAY AUDIO -----------------
+    
+    func prepareSongAndSession() {
+        
+        do {
+            
+            audio = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fileAudio))
+            
+            audio.prepareToPlay()
+            
+            
+            let audioSession = AVAudioSession.sharedInstance()
+            do {
+                
+                try audioSession.setCategory(AVAudioSession.Category.playback)
+                
+            } catch let sessionError {
+                
+                print(sessionError)
+            }
+            
+        } catch let songPlayerError {
+            print(songPlayerError)
+        }
+    }
+    
+    
+    func play() {
+        audio.play()
+        audio.numberOfLoops = 5
+    }
+    
+    func pause() {
+        
+        if audio.isPlaying {
+            audio.pause()
+            hasBeenPaused = true
+        } else {
+            hasBeenPaused = false
+        }
+        
+    }
+    
+    func stop() {
+        if audio.isPlaying {
+            audio.stop()
+        } else {
+        }
+        
+    }
+    
+    func restart() {
+        
+        if audio.isPlaying || hasBeenPaused {
+            audio.stop()
+            audio.play()
+        } else  {
+            audio.play()
+        }
+    }
+    
+    
+    func rotateImage() {
+        let rotationAnimation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotationAnimation.toValue = NSNumber(value: .pi * 2.0)
+        rotationAnimation.duration = 3
+        rotationAnimation.isCumulative = true
+        rotationAnimation.repeatCount = .infinity
+        self.iconMusic?.layer.add(rotationAnimation, forKey: "rotationAnimation")
+    }
+    
+    func stopRotate() {
+        self.iconMusic?.layer.removeAnimation(forKey: "rotationAnimation")
+    }
+    
+    func alertSetTime() {
+        let alert = UIAlertController(title: "Are you sure?", message: "Please set the duration", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
     }
     
 }

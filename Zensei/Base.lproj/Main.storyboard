@@ -699,7 +699,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ubu-Wi-ffB">
-                                <rect key="frame" x="20" y="44" width="374" height="489"/>
+                                <rect key="frame" x="20" y="150" width="374" height="489"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your session is finished." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nL-Gm-Lba">
@@ -713,7 +713,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="NpI-Ji-lAE">
-                                <rect key="frame" x="113" y="581" width="188" height="59"/>
+                                <rect key="frame" x="113" y="687" width="188" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.36470588240000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
@@ -725,7 +725,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kKm-jN-zfD">
-                                <rect key="frame" x="113" y="581" width="188" height="59"/>
+                                <rect key="frame" x="113" y="687" width="188" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.36470588240000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
@@ -736,8 +736,37 @@
                                     <action selector="startPressed:" destination="Gpc-iR-F30" eventType="touchUpInside" id="ZE3-wu-KWc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="amx-Xt-I7d">
+                                <rect key="frame" x="20" y="85" width="50" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.20392156859999999" green="0.36470588240000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="clear" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapBackBtn:" destination="Gpc-iR-F30" eventType="touchUpInside" id="8W1-5C-ueA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gJx-0I-rBU">
+                                <rect key="frame" x="113" y="687" width="188" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.36470588240000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapRestartBtn:" destination="Gpc-iR-F30" eventType="touchUpInside" id="oqv-LT-Xeq"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="record" translatesAutoresizingMaskIntoConstraints="NO" id="L6s-Ay-42B">
+                                <rect key="frame" x="345" y="82" width="49" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.20392156859999999" green="0.36470588240000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="mga-Fy-Am4">
-                                <rect key="frame" x="113" y="581" width="188" height="59"/>
+                                <rect key="frame" x="113" y="687" width="188" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.36470588240000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
@@ -754,16 +783,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="a35-lB-7Tv"/>
                     <connections>
+                        <outlet property="backBtn" destination="amx-Xt-I7d" id="Mv8-UL-EZk"/>
                         <outlet property="centerView" destination="Ubu-Wi-ffB" id="Lgs-2p-rvj"/>
                         <outlet property="endSessionButton" destination="mga-Fy-Am4" id="7AM-Li-N7t"/>
                         <outlet property="finishedLabel" destination="4nL-Gm-Lba" id="NdM-NU-Gkn"/>
+                        <outlet property="iconMusic" destination="L6s-Ay-42B" id="xxW-L9-ibm"/>
+                        <outlet property="restartBtn" destination="gJx-0I-rBU" id="eFG-qD-vGJ"/>
                         <outlet property="startButton" destination="kKm-jN-zfD" id="pwH-7d-x1g"/>
                         <outlet property="stopButton" destination="NpI-Ji-lAE" id="eVf-6A-vZQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b18-R6-yi7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1830" y="845"/>
+            <point key="canvasLocation" x="1828.985507246377" y="844.41964285714278"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="IaS-1n-WPP">
@@ -968,11 +1000,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmB-yo-MJS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="175" y="1575"/>
+            <point key="canvasLocation" x="-586" y="856"/>
         </scene>
     </scenes>
     <resources>
         <image name="chevron.down.circle" catalog="system" width="128" height="121"/>
+        <image name="clear" catalog="system" width="128" height="114"/>
         <image name="dummyprofile" width="400" height="400"/>
         <image name="ic-desc" width="128" height="128"/>
         <image name="lotus" width="938" height="535"/>
@@ -981,6 +1014,7 @@
         <image name="music.note" catalog="system" width="97" height="128"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="play.circle" catalog="system" width="128" height="121"/>
+        <image name="record" width="256" height="256"/>
         <image name="stop" catalog="system" width="128" height="113"/>
     </resources>
 </document>
