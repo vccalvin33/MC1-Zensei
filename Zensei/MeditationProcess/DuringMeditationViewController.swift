@@ -215,7 +215,7 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
         stopButton.isHidden = true
         durationPicker.isHidden = false
         timerLabel.isHidden = true
-         backBtn.isHidden = false
+        backBtn.isHidden = false
         restartBtn.isHidden = false
         viewDidLoad()
         stopRotate()
@@ -384,6 +384,7 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
     
     
     func play() {
+        print("this play")
         audio.play()
         audio.numberOfLoops = 5
     }

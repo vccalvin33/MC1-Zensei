@@ -49,11 +49,11 @@ public static let meditations = [
     ]
     
     public static let sounds = [
-        Meditation(id: "1", title: "Sound 1", icon: "sound-1",type: 2, detail: nil),
-        Meditation(id: "2", title: "Sound 2", icon: "sound-2",type: 2,detail: nil),
-        Meditation(id: "3", title: "Sound 3", icon: "sound-3",type: 2,detail: nil),
-        Meditation(id: "4", title: "Sound 4", icon: "sound-4",type: 2,detail: nil),
-        Meditation(id: "5", title: "Sound 5", icon: "sound-5",type: 2,detail: nil),
+        Meditation(id: "1", title: "Rainy day", icon: "rain",type: 2, detail: nil),
+        Meditation(id: "2", title: "Ocean", icon: "ocean",type: 2,detail: nil),
+        Meditation(id: "3", title: "Futuristic", icon: "futur",type: 2,detail: nil),
+        Meditation(id: "4", title: "Singing bowl", icon: "bowl",type: 2,detail: nil),
+        Meditation(id: "5", title: "Sleep Tight", icon: "night",type: 2,detail: nil),
     ]
     
     
