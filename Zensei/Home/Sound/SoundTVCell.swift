@@ -31,7 +31,7 @@ class SoundTVCell: UITableViewCell,UICollectionViewDelegateFlowLayout, UICollect
             cell.labelTitle.text = menu.title
             cell.imgBG.image = UIImage(named: menu.icon)
             cell.imgType.image = UIImage(systemName: "music.note")
-          
+            
         }
         return cell
     }
@@ -39,8 +39,10 @@ class SoundTVCell: UITableViewCell,UICollectionViewDelegateFlowLayout, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
         //Ke Detail
-        //               let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "storyBoardID") as! NamaController
-        //               self.viewController()?.navigationController?.pushViewController(vc, animated: true)
+        let menu = arraySound[indexPath.row]
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "soundPlayerViewController") as! SoundPlayerViewController
+        vc.dataSound = menu
+        self.viewController()?.navigationController?.pushViewController(vc, animated: true)
         
         
     }

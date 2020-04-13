@@ -939,6 +939,98 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="856.47321428571422"/>
         </scene>
+        <!--Sound Player View Controller-->
+        <scene sceneID="bYp-ND-h1p">
+            <objects>
+                <viewController storyboardIdentifier="soundPlayerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2SK-7D-7xj" customClass="SoundPlayerViewController" customModule="Zensei" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oRP-Va-2Ee">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="night" translatesAutoresizingMaskIntoConstraints="NO" id="XIH-Xl-bgk">
+                                <rect key="frame" x="32" y="203" width="350" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="C6Q-Dn-isJ"/>
+                                    <constraint firstAttribute="width" constant="350" id="hcO-8G-rEd"/>
+                                </constraints>
+                            </imageView>
+                            <visualEffectView opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4J9-If-Wmi">
+                                <rect key="frame" x="32" y="203" width="350" height="350"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2Ce-AH-pfy">
+                                    <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y7Q-Tj-O1q">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="222"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="U5r-4b-UpU">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="222"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="regular"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="A37-xO-kUb"/>
+                                    <constraint firstAttribute="width" constant="350" id="slM-65-scm"/>
+                                </constraints>
+                                <blurEffect style="systemUltraThinMaterial"/>
+                            </visualEffectView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="vinyl-record" translatesAutoresizingMaskIntoConstraints="NO" id="p1r-wE-0sZ">
+                                <rect key="frame" x="79" y="250" width="256" height="256"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="clp-JN-SZm"/>
+                                    <constraint firstAttribute="height" constant="256" id="sO5-3Q-tcB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKx-fG-R2g">
+                                <rect key="frame" x="20" y="151" width="374" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="pK3-iL-IDZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1b-iC-8b0">
+                                <rect key="frame" x="164" y="626.5" width="86" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.20392156859999999" green="0.36470588240000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="play.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="didTapBtnAction:" destination="2SK-7D-7xj" eventType="touchUpInside" id="N8v-Or-pPP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.86274509799999999" green="0.87450980389999999" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="XIH-Xl-bgk" firstAttribute="top" secondItem="lKx-fG-R2g" secondAttribute="bottom" constant="20" id="0By-hc-jSI"/>
+                            <constraint firstItem="lKx-fG-R2g" firstAttribute="leading" secondItem="kmb-x3-E0u" secondAttribute="leading" constant="20" id="0Il-wH-YCI"/>
+                            <constraint firstItem="4J9-If-Wmi" firstAttribute="centerX" secondItem="oRP-Va-2Ee" secondAttribute="centerX" id="0kH-lp-ccb"/>
+                            <constraint firstItem="4J9-If-Wmi" firstAttribute="centerY" secondItem="oRP-Va-2Ee" secondAttribute="centerY" constant="-70" id="5Hf-gX-fgC"/>
+                            <constraint firstItem="p1r-wE-0sZ" firstAttribute="centerY" secondItem="oRP-Va-2Ee" secondAttribute="centerY" constant="-70" id="Lpl-cj-7Nf"/>
+                            <constraint firstItem="XIH-Xl-bgk" firstAttribute="centerX" secondItem="oRP-Va-2Ee" secondAttribute="centerX" id="Yi7-dV-S9V"/>
+                            <constraint firstItem="p1r-wE-0sZ" firstAttribute="centerX" secondItem="oRP-Va-2Ee" secondAttribute="centerX" id="apr-js-cEv"/>
+                            <constraint firstItem="kmb-x3-E0u" firstAttribute="trailing" secondItem="lKx-fG-R2g" secondAttribute="trailing" constant="20" id="pkD-iL-9G3"/>
+                            <constraint firstItem="XIH-Xl-bgk" firstAttribute="centerY" secondItem="oRP-Va-2Ee" secondAttribute="centerY" constant="-70" id="u4u-w6-2FW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kmb-x3-E0u"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnAction" destination="v1b-iC-8b0" id="fal-v4-4Uh"/>
+                        <outlet property="imgCover" destination="XIH-Xl-bgk" id="xxV-JQ-mmI"/>
+                        <outlet property="imgVinyl" destination="p1r-wE-0sZ" id="Wye-J2-yCC"/>
+                        <outlet property="labelSongTitle" destination="lKx-fG-R2g" id="yvs-PV-yi5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DSH-8I-jX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1282.608695652174" y="859.82142857142856"/>
+        </scene>
         <!--Sound View Controller-->
         <scene sceneID="26q-as-Pxl">
             <objects>
@@ -1012,9 +1104,12 @@
         <image name="meditasi-1" width="5000" height="2813"/>
         <image name="moon.zzz" catalog="system" width="118" height="128"/>
         <image name="music.note" catalog="system" width="97" height="128"/>
+        <image name="night" width="876" height="660"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="play.circle" catalog="system" width="128" height="121"/>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
         <image name="record" width="256" height="256"/>
         <image name="stop" catalog="system" width="128" height="113"/>
+        <image name="vinyl-record" width="256" height="256"/>
     </resources>
 </document>

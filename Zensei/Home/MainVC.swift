@@ -17,6 +17,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light    
         self.navigationController?.navigationBar.isTranslucent = false
         
         let savedSessions = defaults.integer(forKey: "savedSessions")

@@ -386,7 +386,6 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
     
     
     func play() {
-        print("this play")
         audio.play()
         audio.numberOfLoops = 5
     }

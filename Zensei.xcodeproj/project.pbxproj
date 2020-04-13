@@ -26,6 +26,12 @@
 		764BE714243C70F100C76E42 /* Zensei.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 764BE712243C70F100C76E42 /* Zensei.xcdatamodeld */; };
 		764BE716243C70F200C76E42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764BE715243C70F200C76E42 /* Assets.xcassets */; };
 		764BE719243C70F200C76E42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764BE717243C70F200C76E42 /* LaunchScreen.storyboard */; };
+		765F68BC2444CC36002A3FB7 /* SoundPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765F68BB2444CC36002A3FB7 /* SoundPlayerViewController.swift */; };
+		765F68BE2444D8C2002A3FB7 /* rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 765F68BD2444D8C1002A3FB7 /* rain.mp3 */; };
+		765F68C02444D912002A3FB7 /* ocean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 765F68BF2444D912002A3FB7 /* ocean.mp3 */; };
+		765F68C22444D9A3002A3FB7 /* night.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 765F68C12444D9A3002A3FB7 /* night.mp3 */; };
+		765F68C42444DAA4002A3FB7 /* bowl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 765F68C32444DAA4002A3FB7 /* bowl.mp3 */; };
+		765F68C62444DC07002A3FB7 /* futur.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 765F68C52444DC07002A3FB7 /* futur.mp3 */; };
 		76F23BFC24431C3700196BBE /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F23BFB24431C3700196BBE /* Structs.swift */; };
 		76F23BFE2443208400196BBE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F23BFD2443208400196BBE /* Extension.swift */; };
 		76F23C042443214800196BBE /* MeditationTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F23C032443214800196BBE /* MeditationTVCell.swift */; };
@@ -61,6 +67,12 @@
 		764BE715243C70F200C76E42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		764BE718243C70F200C76E42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		764BE71A243C70F200C76E42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		765F68BB2444CC36002A3FB7 /* SoundPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayerViewController.swift; sourceTree = "<group>"; };
+		765F68BD2444D8C1002A3FB7 /* rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain.mp3; sourceTree = "<group>"; };
+		765F68BF2444D912002A3FB7 /* ocean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ocean.mp3; sourceTree = "<group>"; };
+		765F68C12444D9A3002A3FB7 /* night.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = night.mp3; sourceTree = "<group>"; };
+		765F68C32444DAA4002A3FB7 /* bowl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bowl.mp3; sourceTree = "<group>"; };
+		765F68C52444DC07002A3FB7 /* futur.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = futur.mp3; sourceTree = "<group>"; };
 		76F23BFB24431C3700196BBE /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		76F23BFD2443208400196BBE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		76F23C032443214800196BBE /* MeditationTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationTVCell.swift; sourceTree = "<group>"; };
@@ -145,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				CB06A68D244466AD00EE2843 /* SoundViewController.swift */,
+				765F68BB2444CC36002A3FB7 /* SoundPlayerViewController.swift */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -152,6 +165,11 @@
 		761BA8FA24442FCD001A58A5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				765F68BD2444D8C1002A3FB7 /* rain.mp3 */,
+				765F68C12444D9A3002A3FB7 /* night.mp3 */,
+				765F68C32444DAA4002A3FB7 /* bowl.mp3 */,
+				765F68BF2444D912002A3FB7 /* ocean.mp3 */,
+				765F68C52444DC07002A3FB7 /* futur.mp3 */,
 				761BA8FB2444301C001A58A5 /* meditation-1.mp3 */,
 			);
 			path = Resources;
@@ -294,6 +312,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				764BE719243C70F200C76E42 /* LaunchScreen.storyboard in Resources */,
+				765F68C02444D912002A3FB7 /* ocean.mp3 in Resources */,
+				765F68C42444DAA4002A3FB7 /* bowl.mp3 in Resources */,
+				765F68BE2444D8C2002A3FB7 /* rain.mp3 in Resources */,
+				765F68C22444D9A3002A3FB7 /* night.mp3 in Resources */,
+				765F68C62444DC07002A3FB7 /* futur.mp3 in Resources */,
 				764BE716243C70F200C76E42 /* Assets.xcassets in Resources */,
 				761BA8FC2444301C001A58A5 /* meditation-1.mp3 in Resources */,
 				764BE711243C70F100C76E42 /* Main.storyboard in Resources */,
@@ -323,6 +346,7 @@
 				761BA8F024435C83001A58A5 /* ProgressCell.swift in Sources */,
 				76F23BFC24431C3700196BBE /* Structs.swift in Sources */,
 				761BA8E024435558001A58A5 /* DetailNumberedCell.swift in Sources */,
+				765F68BC2444CC36002A3FB7 /* SoundPlayerViewController.swift in Sources */,
 				76F23C12244336B000196BBE /* MenuData.swift in Sources */,
 				76F23C0E244321C700196BBE /* SoundCVCell.swift in Sources */,
 				76F23BFE2443208400196BBE /* Extension.swift in Sources */,

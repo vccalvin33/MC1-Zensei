@@ -52,7 +52,9 @@ class RecomendedTVCell: UITableViewCell,UICollectionViewDelegateFlowLayout, UICo
                       vc.dataDetail = menu
                       self.viewController()?.navigationController?.pushViewController(vc, animated: true)
             }else{
-                
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "soundPlayerViewController") as! SoundPlayerViewController
+                    vc.dataSound = menu
+                    self.viewController()?.navigationController?.pushViewController(vc, animated: true)
             }
         }
       
