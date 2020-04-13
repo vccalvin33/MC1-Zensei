@@ -266,6 +266,8 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
         default:
             break
         }
+        defaults.set(sesi, forKey: "savedSessions")
+        defaults.set(minSum, forKey: "savedMinutes")
         
     }
     
