@@ -9,8 +9,7 @@
 import UIKit
 
 class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    
-    
+
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var finishedLabel: UILabel!
     @IBOutlet weak var endSessionButton: UIButton!
@@ -187,11 +186,50 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
         //segue
     }
     
+    func getDate() -> String {
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "cccc"
+        let date = dateFormatter.string(from: currentDate)
+        
+        return date
+    }
+    
     @IBAction func endSessionPressed(_ sender: Any) {
         //segue
         //pass the minutes data
         //self.navigationController!.popToRootViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
+        
+        sesi += 1
+        min = meditationDuration[0]
+        let day = getDate()
+        switch day {
+            case "Monday":
+                minSum[0] += min
+                break
+            case "Tuesday":
+                minSum[1] += min
+                break
+            case "Wednesday":
+                minSum[2] += min
+                break
+            case "Thursday":
+                minSum[3] += min
+                break
+            case "Friday":
+                minSum[4] += min
+                break
+            case "Saturday":
+                minSum[5] += min
+                break
+            case "Sunday":
+                minSum[6] += min
+                break
+            default:
+                break
+        }
+
     }
     
     //MARK: ANIMATION

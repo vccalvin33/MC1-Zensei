@@ -33,3 +33,7 @@ struct DetailMeditation {
      var desc: [String]!
      var isOpen: Bool!
 }
+
+var min = 0
+var minSum = [0, 0, 0, 0, 0, 0, 0, 0]
+var sesi = 0
