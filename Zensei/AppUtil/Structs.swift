@@ -18,7 +18,7 @@ struct Meditation {
 
 struct WeeklyProgress {
     var day: String
-    var time: String
+    var time: Int
 }
 
 

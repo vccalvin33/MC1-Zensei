@@ -848,20 +848,20 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="progressCell" id="QHx-SE-Fzk" customClass="ProgressCell" customModule="Zensei" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="471.5" width="374" height="44"/>
+                                        <rect key="frame" x="20" y="471.5" width="374" height="44.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QHx-SE-Fzk" id="mUA-QK-rNF">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5a-Ux-6Lb">
-                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="42" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ih-4U-nzh">
-                                                    <rect key="frame" x="312" y="11" width="42" height="21.5"/>
+                                                    <rect key="frame" x="312" y="11" width="42" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -896,9 +896,11 @@
                         <viewLayoutGuide key="safeArea" id="09L-Lz-Aad"/>
                     </view>
                     <connections>
+                        <outlet property="minutesLabel" destination="lBN-fp-7NV" id="8QF-EA-zsh"/>
                         <outlet property="profileName" destination="m0b-hT-neA" id="k5k-6j-OD7"/>
                         <outlet property="profilePhoto" destination="3ja-1p-ucQ" id="bsI-YB-XbT"/>
                         <outlet property="progressTableView" destination="ozJ-i4-jfh" id="V5a-Bi-rBA"/>
+                        <outlet property="sessionsLabel" destination="k3T-8P-5Hg" id="Wdb-ok-3bK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4c-mF-fmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
