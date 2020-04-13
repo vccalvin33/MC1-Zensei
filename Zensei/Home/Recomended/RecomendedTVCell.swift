@@ -47,7 +47,8 @@ class RecomendedTVCell: UITableViewCell,UICollectionViewDelegateFlowLayout, UICo
          if arrayRecomended.count != 0 {
             let menu = arrayRecomended[indexPath.row]
             if menu.type == 1 {
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newDetailViewController") as! NewDetailViewController
+                //let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newDetailViewController") as! NewDetailViewController
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailVC") as! DetailVC
                       vc.dataDetail = menu
                       self.viewController()?.navigationController?.pushViewController(vc, animated: true)
             }else{
