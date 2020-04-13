@@ -10,6 +10,6 @@ import UIKit
 
 class RecomendedCVCell: UICollectionViewCell {
     @IBOutlet weak var imgType: UIImageView!
-       @IBOutlet weak var imgBG: UIImageView!
-       @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var imgBG: UIImageView!
+    @IBOutlet weak var labelTitle: UILabel!
 }

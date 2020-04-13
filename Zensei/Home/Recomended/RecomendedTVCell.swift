@@ -33,9 +33,9 @@ class RecomendedTVCell: UITableViewCell,UICollectionViewDelegateFlowLayout, UICo
             cell.imgBG.image = UIImage(named: menu.icon)
             
             if menu.type == 1 {
-                cell.imgType.image = UIImage(systemName: "moon.zzz")
+                cell.imgType.image = UIImage(named: "lotus-position")
             }else{
-                UIImage(systemName: "music.note")
+                 cell.imgType.image = UIImage(systemName: "music.note")
             }
         }
         return cell
@@ -44,10 +44,17 @@ class RecomendedTVCell: UITableViewCell,UICollectionViewDelegateFlowLayout, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
         //Ke Detail
-        //               let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "storyBoardID") as! NamaController
-        //               self.viewController()?.navigationController?.pushViewController(vc, animated: true)
-        
-        
+         if arrayRecomended.count != 0 {
+            let menu = arrayRecomended[indexPath.row]
+            if menu.type == 1 {
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newDetailViewController") as! NewDetailViewController
+                      vc.dataDetail = menu
+                      self.viewController()?.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                
+            }
+        }
+      
     }
     
     

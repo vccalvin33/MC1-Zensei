@@ -7,11 +7,29 @@
 //
 
 import Foundation
+
 struct Meditation {
     var id : String!
     var title: String!
     var icon: String!
-    var description: String!
     var type: Int!
+    var detail: [DetailMeditation]?
 }
 
+struct WeeklyProgress {
+    var day: String
+    var time: String
+}
+
+
+struct DetailContent {
+    var title: String
+    var content: [String]
+    var isNumbered: Bool? = false
+}
+
+struct DetailMeditation {
+     var title: String!
+     var desc: String!
+     var isOpen: Bool!
+}

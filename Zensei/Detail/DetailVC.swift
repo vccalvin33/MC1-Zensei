@@ -312,6 +312,7 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         return DetailCell()
     }
     
+    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerSpacing = UIView()
         footerSpacing.backgroundColor = .clear

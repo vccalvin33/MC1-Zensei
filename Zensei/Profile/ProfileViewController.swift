@@ -80,11 +80,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         self.profilePhoto.clipsToBounds = true
         //self.profilePhoto.layer.borderColor = UIColor.black.cgColor
 //        progressTableView.isScrollEnabled = false
-        progressTableView.isUserInteractionEnabled = false
+        //progressTableView.isUserInteractionEnabled = false
         
         progressTableView.delegate = self
         progressTableView.dataSource = self
-        progressTableView.backgroundColor = .clear
+        //progressTableView.backgroundColor = .clear
     }
     
     @IBAction func closeProfile(_ sender: Any) {

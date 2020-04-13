@@ -87,9 +87,8 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //Ke Menu Profile
     @IBAction func didTapProfileMenu(_ sender: Any) {
-        //Ke Detail
-        // let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "storyBoardID") as! NamaController
-        // self.navigationController?.pushViewController(vc, animated: true)
+         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profileViewController") as! ProfileViewController
+         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
