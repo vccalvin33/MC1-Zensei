@@ -88,23 +88,23 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                     minutesSum += progress.time
                     break
                 case ("Wednesday", "Wednesday"):
-                    progress.time = 4
+                    progress.time = minutes
                     minutesSum += progress.time
                     break
                 case ("Thursday", "Thursday"):
-                    progress.time = 5
+                    progress.time = minutes
                     minutesSum += progress.time
                     break
                 case ("Friday", "Friday"):
-                    progress.time = 6
+                    progress.time = minutes
                     minutesSum += progress.time
                     break
                 case ("Saturday", "Saturday"):
-                    progress.time = 7
+                    progress.time = minutes
                     minutesSum += progress.time
                     break
                 case ("Sunday","Sunday"):
-                    progress.time = 1
+                    progress.time = minutes
                     minutesSum += progress.time
                     break
                 default:
@@ -158,15 +158,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 //        defaults.set(sessionsSum, forKey: "sessionsSum")
 //        defaults.set(minutes, forKey: "minutes")
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
