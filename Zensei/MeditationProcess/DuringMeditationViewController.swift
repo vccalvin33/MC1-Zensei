@@ -16,16 +16,11 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
     @IBOutlet weak var endSessionButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var iconMusic: UIImageView!
-    @IBOutlet weak var backBtn: UIButton!{
-        didSet{
-            backBtn.isHidden = true
-            backBtn.layer.cornerRadius = 20
-        }
-    }
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var restartBtn: UIButton!{
         didSet{
             restartBtn.isHidden = true
-            restartBtn.layer.cornerRadius = 20 
+            restartBtn.layer.cornerRadius = 20
         }
     }
     
@@ -196,13 +191,20 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
     //MARK: WHEN BUTTON IS PRESSED
     
     @IBAction func startPressed(_ sender: Any) {
-        startButton.isHidden = true
-        //startButton.isEnabled = false
-        durationPicker.isHidden = true
-        stopButton.isHidden = false
-        timerLabel.isHidden = false
-        timerCompleteSetup()
-        play()
+        if meditationDuration[0] == 0 && meditationDuration[1] == 0 {
+            alertSetTime()
+        }else{
+            startButton.isHidden = true
+            //startButton.isEnabled = false
+            durationPicker.isHidden = true
+            stopButton.isHidden = false
+            timerLabel.isHidden = false
+            backBtn.isHidden = true
+            timerCompleteSetup()
+            rotateImage()
+            play()
+        }
+        
     }
     
     
@@ -213,9 +215,10 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
         stopButton.isHidden = true
         durationPicker.isHidden = false
         timerLabel.isHidden = true
+         backBtn.isHidden = false
         restartBtn.isHidden = false
-        backBtn.isHidden = false
         viewDidLoad()
+        stopRotate()
         //segue
         stop()
     }
@@ -325,19 +328,27 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
             timerLabel.text = "00:00"
             stopButton.isHidden = true
             endSessionButton.isHidden = false
+            backBtn.isHidden = true
             finishedLabel.isHidden = false
+            stopRotate()
             stop()
         }
     }
     
     @IBAction func didTapRestartBtn(_ sender: Any) {
-        restartBtn.isHidden = true
-        backBtn.isHidden = true
-        durationPicker.isHidden = true
-        stopButton.isHidden = false
-        timerLabel.isHidden = false
-        timerCompleteSetup()
-        play()
+        if meditationDuration[0] == 0 && meditationDuration[1] == 0 {
+            alertSetTime()
+        }else{
+            restartBtn.isHidden = true
+            backBtn.isHidden = true
+            durationPicker.isHidden = true
+            stopButton.isHidden = false
+            timerLabel.isHidden = false
+            timerCompleteSetup()
+            rotateImage()
+            play()
+        }
+        
     }
     
     @IBAction func didTapBackBtn(_ sender: Any) {
@@ -389,12 +400,12 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
     }
     
     func stop() {
-           if audio.isPlaying {
+        if audio.isPlaying {
             audio.stop()
-           } else {
-           }
-           
-       }
+        } else {
+        }
+        
+    }
     
     func restart() {
         
@@ -406,5 +417,24 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
         }
     }
     
+    
+    func rotateImage() {
+        let rotationAnimation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotationAnimation.toValue = NSNumber(value: .pi * 2.0)
+        rotationAnimation.duration = 3
+        rotationAnimation.isCumulative = true
+        rotationAnimation.repeatCount = .infinity
+        self.iconMusic?.layer.add(rotationAnimation, forKey: "rotationAnimation")
+    }
+    
+    func stopRotate() {
+        self.iconMusic?.layer.removeAnimation(forKey: "rotationAnimation")
+    }
+    
+    func alertSetTime() {
+        let alert = UIAlertController(title: "Are you sure?", message: "Please set the duration", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+    }
     
 }
