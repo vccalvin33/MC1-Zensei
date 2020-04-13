@@ -13,15 +13,22 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var progressTableView: UITableView!
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var profileName: UILabel!
-        
+    @IBOutlet weak var minutesLabel: UILabel!
+    @IBOutlet weak var sessionsLabel: UILabel!
+    
+    let defaults = UserDefaults.standard
+    var minutesSum = 0
+    var sessionsSum = 0
+    var minutes = 0
+    
     let weeklyProgress = [
-        WeeklyProgress(day: "Monday", time: "0"),
-        WeeklyProgress(day: "Tuesday", time: "0"),
-        WeeklyProgress(day: "Wednesday", time: "0"),
-        WeeklyProgress(day: "Thursday", time: "0"),
-        WeeklyProgress(day: "Friday", time: "0"),
-        WeeklyProgress(day: "Saturday", time: "0"),
-        WeeklyProgress(day: "Sunday", time: "0")
+        WeeklyProgress(day: "Monday", time: 0),
+        WeeklyProgress(day: "Tuesday", time: 0),
+        WeeklyProgress(day: "Wednesday", time: 0),
+        WeeklyProgress(day: "Thursday", time: 0),
+        WeeklyProgress(day: "Friday", time: 0),
+        WeeklyProgress(day: "Saturday", time: 0),
+        WeeklyProgress(day: "Sunday", time: 0)
     ]
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -53,16 +60,64 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         return weeklyProgress.count
     }
     
+    func getDate() -> String {
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "cccc"
+        let date = dateFormatter.string(from: currentDate)
+        
+        return date
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "progressCell", for: indexPath) as? ProgressCell {
         
-            let progress = weeklyProgress[indexPath.row]
+            var progress = weeklyProgress[indexPath.row]
 
         // Configure the cell
+            let day = getDate()
+            //dateChecker
+            switch (day, progress.day) {
+                case ("Monday", "Monday"):
+                    progress.time = minutes
+                    minutesSum += progress.time
+                    break
+                case ("Tuesday", "Tuesday"):
+                    progress.time = minutes
+                    minutesSum += progress.time
+                    break
+                case ("Wednesday", "Wednesday"):
+                    progress.time = 4
+                    minutesSum += progress.time
+                    break
+                case ("Thursday", "Thursday"):
+                    progress.time = 5
+                    minutesSum += progress.time
+                    break
+                case ("Friday", "Friday"):
+                    progress.time = 6
+                    minutesSum += progress.time
+                    break
+                case ("Saturday", "Saturday"):
+                    progress.time = 7
+                    minutesSum += progress.time
+                    break
+                case ("Sunday","Sunday"):
+                    progress.time = 1
+                    minutesSum += progress.time
+                    break
+                default:
+                    break
+            }
+            
+            //edit cell & label
             cell.progressDay.text = progress.day
-            cell.progressTime.text = progress.time + " min"
+            cell.progressTime.text = String(progress.time) + " min"
+            minutesLabel.text = String(minutesSum)
+            sessionsLabel.text = String(sessionsSum)
             cell.backgroundColor = .clear
+            
             return cell
         }
         return ProgressCell()
@@ -85,10 +140,23 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         progressTableView.delegate = self
         progressTableView.dataSource = self
         //progressTableView.backgroundColor = .clear
+        
+//        let sesiValue = defaults.integer(forKey: "sessionsSum")
+//        sessionsSum += sesiValue
+//
+//        let minValue = defaults.integer(forKey: "minutes")
+//        minutes += minValue
+//        print(minValue)
+//        print(sesiValue)
     }
     
     @IBAction func closeProfile(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+//        sessionsSum = 1
+//        minutes = 1
+//        print (sessionsSum)
+//        defaults.set(sessionsSum, forKey: "sessionsSum")
+//        defaults.set(minutes, forKey: "minutes")
     }
     /*
     // MARK: - Navigation
