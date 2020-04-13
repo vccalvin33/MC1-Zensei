@@ -216,6 +216,24 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.title = dataDetail?.title
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.2039215686, green: 0.3647058824, blue: 0.3058823529, alpha: 1)
+        if #available(iOS 13, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = #colorLiteral(red: 0.8891196251, green: 0.8976630569, blue: 0.8601869941, alpha: 1)
+            appearance.titleTextAttributes =  [.foregroundColor:#colorLiteral(red: 0.2039215686, green: 0.3647058824, blue: 0.3058823529, alpha: 1) ]
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.compactAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        } else {
+            navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.2039215686, green: 0.3647058824, blue: 0.3058823529, alpha: 1)
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.2039215686, green: 0.3647058824, blue: 0.3058823529, alpha: 1)]
+        }
+    }
+    
+    
         
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
