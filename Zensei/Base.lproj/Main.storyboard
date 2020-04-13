@@ -433,7 +433,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eQj-qO-g2C">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eQj-qO-g2C">
                                 <rect key="frame" x="0.0" y="44" width="414" height="759"/>
                                 <color key="backgroundColor" red="0.86274509799999999" green="0.87450980389999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meditasi-1" id="ojP-z5-LUx">
@@ -488,7 +488,7 @@
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.86274509799999999" green="0.87450980389999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.20392156859999999" green="0.36470588240000001" blue="0.30588235289999999" alpha="0.10059931506849311" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="xNj-Id-b1m" firstAttribute="top" secondItem="AhP-2X-R7d" secondAttribute="top" constant="18" id="3Oz-iA-zEQ"/>
                                                         <constraint firstAttribute="bottom" secondItem="Vtm-w6-t9M" secondAttribute="bottom" constant="15" id="67a-7u-OiC"/>
@@ -552,6 +552,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="didStartMeditating:" destination="PiI-5g-9Bl" eventType="touchUpInside" id="HG1-wC-Skl"/>
                                     <action selector="endSessionPressed:" destination="Gpc-iR-F30" eventType="touchUpInside" id="tRM-Ab-TO2"/>
                                 </connections>
                             </button>
@@ -611,9 +612,6 @@
                                 <state key="normal" title="Stress">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Gpc-iR-F30" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="CBc-Pl-9DQ"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ZENSEI is determined to give you the best meditation experience and improve your mental health condition." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHv-BE-aL0">
                                 <rect key="frame" x="20" y="744" width="374" height="92"/>

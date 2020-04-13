@@ -92,5 +92,9 @@ class NewDetailViewController: UIViewController, UITableViewDelegate, UITableVie
             return 80
         }
     }
+    @IBAction func didStartMeditating(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "duringMeditationViewController") as! DuringMeditationViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }

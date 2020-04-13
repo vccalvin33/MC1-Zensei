@@ -13,7 +13,6 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
     
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var finishedLabel: UILabel!
-    
     @IBOutlet weak var endSessionButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -191,6 +190,7 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
     @IBAction func endSessionPressed(_ sender: Any) {
         //segue
         //pass the minutes data
+         self.navigationController!.popToRootViewController(animated: true)
     }
     
     //MARK: ANIMATION
