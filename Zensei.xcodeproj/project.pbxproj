@@ -36,6 +36,7 @@
 		76F23C0E244321C700196BBE /* SoundCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F23C0D244321C700196BBE /* SoundCVCell.swift */; };
 		76F23C102443251C00196BBE /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F23C0F2443251C00196BBE /* Function.swift */; };
 		76F23C12244336B000196BBE /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F23C11244336B000196BBE /* MenuData.swift */; };
+		CB06A68E244466AD00EE2843 /* SoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB06A68D244466AD00EE2843 /* SoundViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		76F23C0D244321C700196BBE /* SoundCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCVCell.swift; sourceTree = "<group>"; };
 		76F23C0F2443251C00196BBE /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		76F23C11244336B000196BBE /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
+		CB06A68D244466AD00EE2843 /* SoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		761BA8F924442FBF001A58A5 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				CB06A68D244466AD00EE2843 /* SoundViewController.swift */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				761BA8E124435558001A58A5 /* DetailVC.swift in Sources */,
 				761BA8F824441F34001A58A5 /* DetailTableViewCell.swift in Sources */,
 				76F23C0C244321A100196BBE /* SoundTVCell.swift in Sources */,
+				CB06A68E244466AD00EE2843 /* SoundViewController.swift in Sources */,
 				761BA8DF24435558001A58A5 /* DetailCell.swift in Sources */,
 				764BE714243C70F100C76E42 /* Zensei.xcdatamodeld in Sources */,
 				761BA8F024435C83001A58A5 /* ProgressCell.swift in Sources */,
