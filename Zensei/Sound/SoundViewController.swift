@@ -22,7 +22,7 @@ class SoundViewController: UIViewController{
     var counter = 900.0
     var timeIsRunning = false
     var audio: AVAudioPlayer?
-    let meditAudio = Bundle.main.path(forResource: "medit", ofType: "wav")!
+    let fileAudio = Bundle.main.path(forResource: "meditation-1", ofType: "mp3")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +96,7 @@ class SoundViewController: UIViewController{
     
     func playMusic() {
         if counter >= 0 {
-            let url = URL(fileURLWithPath: meditAudio)
+            let url = URL(fileURLWithPath: fileAudio)
         
         do {
             audio = try AVAudioPlayer(contentsOf: url)
