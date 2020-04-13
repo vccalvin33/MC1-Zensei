@@ -91,6 +91,26 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     // MARK: CONTENT PROPERTIES
     let elementsHeight: CGFloat = 40.0
     
+    var dataDetail: Meditation? {
+        didSet {
+            meditationName = dataDetail?.title
+            meditationImage = UIImage(named: dataDetail?.icon ?? "")
+            
+            let unparsedDetail = dataDetail?.detail
+            if let numberOfDetail = unparsedDetail?.count, numberOfDetail > 0 {
+                var transferredDetail = [DetailContent]()
+                for index in 0..<numberOfDetail {
+                    if unparsedDetail?[index].title == "Instruction" {
+                        transferredDetail.append(DetailContent(title: unparsedDetail?[index].title ?? "Description", content: unparsedDetail?[index].desc ?? ["This is a meditation"], isNumbered: true))
+                    } else {
+                        transferredDetail.append(DetailContent(title: unparsedDetail?[index].title ?? "Description", content: unparsedDetail?[index].desc ?? ["This is a meditation"]))
+                    }
+                }
+                detailContentList = transferredDetail
+            }
+        }
+    }
+    
     var detailList = [DetailContent]()
     var detailContentList = [
         DetailContent(title: "Description", content: ["This is just a regular description."]),
@@ -219,7 +239,7 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             detailTable.topAnchor.constraint(equalTo: mediaHolder.bottomAnchor, constant: 36),
             detailTable.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             detailTable.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            detailTable.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
+            //detailTable.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
         ]
         
         constraintLandscape = [
@@ -250,6 +270,7 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             //durationField.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             //durationField.heightAnchor.constraint(equalToConstant: elementsHeight),
             
+            detailTable.bottomAnchor.constraint(equalTo: startButton.topAnchor, constant: -24),
             //startButton.topAnchor.constraint(equalTo: durationField.bottomAnchor, constant: 12),
             startButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
             startButton.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
