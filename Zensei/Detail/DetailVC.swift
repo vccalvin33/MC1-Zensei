@@ -72,6 +72,7 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         button.backgroundColor = UIColor(red: 52/255, green: 93/255, blue: 67/255, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 20
+        button.addTarget(self, action: #selector(startMeditation), for: .touchUpInside)
         return button
     }()
     
@@ -434,6 +435,12 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
+    }
+    
+    @objc func startMeditation() {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "duringMeditationViewController") as! DuringMeditationViewController
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

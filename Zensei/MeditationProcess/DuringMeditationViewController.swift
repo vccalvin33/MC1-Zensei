@@ -190,7 +190,8 @@ class DuringMeditationViewController: UIViewController, UIPickerViewDataSource, 
     @IBAction func endSessionPressed(_ sender: Any) {
         //segue
         //pass the minutes data
-         self.navigationController!.popToRootViewController(animated: true)
+        //self.navigationController!.popToRootViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     //MARK: ANIMATION
