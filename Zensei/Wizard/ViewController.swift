@@ -34,7 +34,6 @@ class ViewController: UIViewController {
         boredButton.layer.cornerRadius = 20
         //sadButton.titleLabel?.font = UIFont(name: "guzuri_font_1nensei", size: 30)
         sadButton.layer.cornerRadius = 20
-       
     }
 
 

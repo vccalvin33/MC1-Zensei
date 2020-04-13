@@ -19,7 +19,14 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isTranslucent = false
         
-        
+        let savedSessions = defaults.integer(forKey: "savedSessions")
+        sesi = savedSessions
+        var savedMinutes = defaults.array(forKey: "savedMinutes") as? [Int] ?? [Int]()
+        _ = 0
+        for _ in 0...6 {
+            savedMinutes.append(0)
+        }
+        minSum = savedMinutes
     }
     
     override func viewWillAppear(_ animated: Bool) {

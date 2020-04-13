@@ -16,7 +16,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var minutesLabel: UILabel!
     @IBOutlet weak var sessionsLabel: UILabel!
     
-    let defaults = UserDefaults.standard
     var minutesSum = 0
     var sessionsSum = sesi
 //    var minutes = min
@@ -174,22 +173,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         progressTableView.dataSource = self
         //progressTableView.backgroundColor = .clear
         
-//        let sesiValue = defaults.integer(forKey: "sessionsSum")
-//        sessionsSum += sesiValue
-//
-//        let minValue = defaults.integer(forKey: "minutes")
-//        minutes += minValue
-//        print(minValue)
-//        print(sesiValue)
-    }
-    
-    @IBAction func closeProfile(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-//        sessionsSum = 1
-//        minutes = 1
-//        print (sessionsSum)
-//        defaults.set(sessionsSum, forKey: "sessionsSum")
-//        defaults.set(minutes, forKey: "minutes")
     }
 
 }

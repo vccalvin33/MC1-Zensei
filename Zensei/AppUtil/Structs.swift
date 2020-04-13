@@ -35,5 +35,6 @@ struct DetailMeditation {
 }
 
 var min = 0
-var minSum = [0, 0, 0, 0, 0, 0, 0, 0]
+var minSum = Array(repeating: 0, count: 7)
 var sesi = 0
+let defaults = UserDefaults.standard
