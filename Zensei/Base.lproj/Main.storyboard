@@ -748,20 +748,47 @@
                                     <action selector="endSessionPressed:" destination="Gpc-iR-F30" eventType="touchUpInside" id="J7f-N4-HUI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="amx-Xt-I7d">
+                                <rect key="frame" x="20" y="687" width="165" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.36470588240000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapBackBtn:" destination="Gpc-iR-F30" eventType="touchUpInside" id="8W1-5C-ueA"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="record" translatesAutoresizingMaskIntoConstraints="NO" id="L6s-Ay-42B">
                                 <rect key="frame" x="345" y="82" width="49" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.20392156859999999" green="0.36470588240000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gJx-0I-rBU">
+                                <rect key="frame" x="227" y="687" width="167" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.36470588240000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapRestartBtn:" destination="Gpc-iR-F30" eventType="touchUpInside" id="oqv-LT-Xeq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.86274509799999999" green="0.87450980389999999" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="n21-jo-iFl"/>
                     </view>
                     <navigationItem key="navigationItem" id="a35-lB-7Tv"/>
                     <connections>
+                        <outlet property="backBtn" destination="amx-Xt-I7d" id="Mv8-UL-EZk"/>
                         <outlet property="centerView" destination="Ubu-Wi-ffB" id="Lgs-2p-rvj"/>
                         <outlet property="endSessionButton" destination="mga-Fy-Am4" id="7AM-Li-N7t"/>
                         <outlet property="finishedLabel" destination="4nL-Gm-Lba" id="NdM-NU-Gkn"/>
+                        <outlet property="iconMusic" destination="L6s-Ay-42B" id="xxW-L9-ibm"/>
+                        <outlet property="restartBtn" destination="gJx-0I-rBU" id="eFG-qD-vGJ"/>
                         <outlet property="startButton" destination="kKm-jN-zfD" id="pwH-7d-x1g"/>
                         <outlet property="stopButton" destination="NpI-Ji-lAE" id="eVf-6A-vZQ"/>
                     </connections>
