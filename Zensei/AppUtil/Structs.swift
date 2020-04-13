@@ -30,6 +30,6 @@ struct DetailContent {
 
 struct DetailMeditation {
      var title: String!
-     var desc: String!
+     var desc: [String]!
      var isOpen: Bool!
 }

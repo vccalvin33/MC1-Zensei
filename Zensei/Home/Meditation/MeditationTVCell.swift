@@ -39,7 +39,8 @@ class MeditationTVCell: UITableViewCell,UICollectionViewDelegateFlowLayout, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
         //Ke Detail
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newDetailViewController") as! NewDetailViewController
+        //let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newDetailViewController") as! NewDetailViewController
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailVC") as! DetailVC
         vc.dataDetail = arrayMeditation[indexPath.row]
         self.viewController()?.navigationController?.pushViewController(vc, animated: true)
     }

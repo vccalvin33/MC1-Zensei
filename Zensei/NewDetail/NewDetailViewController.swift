@@ -56,7 +56,7 @@ class NewDetailViewController: UIViewController, UITableViewDelegate, UITableVie
             cell.iconDetail.image = #imageLiteral(resourceName: "ic-instruction")
         }
         
-        cell.labelDesc.text = dataDetail.detail![indexPath.row].desc
+        //cell.labelDesc.text = dataDetail.detail![indexPath.row].desc
         cell.labelDetail.text = dataDetail.detail![indexPath.row].title
         
         if dataDetail.detail![indexPath.row].isOpen {
